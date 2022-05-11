@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="todo"
+            type="com.di.pork.data.Todo" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/todoLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/doBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:isDone="@{todo.isdone}" />
+
+        <TextView
+            android:id="@+id/nicknameT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{todo.nickname}" />
+
+        <TextView
+            android:id="@+id/contentT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="@{todo.content}" />
+
+        <TextView
+            android:id="@+id/dateT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@{todo.date}" />
+
+    </LinearLayout>
+</layout>
