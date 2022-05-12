@@ -94,7 +94,7 @@ class MyInfoActivity : AppCompatActivity() {
                 if(res.result){
                     Glide.with(activity).load(activity.resources.getString(R.string.imageUrl) + res.image)
 //                        .apply(RequestOptions().centerCrop().circleCrop())
-                        .apply(RequestOptions().transforms(RoundedCorners(20),FitCenter()))
+                        .apply(RequestOptions().transforms(RoundedCorners(20),CenterCrop()))
                         .into(profileIV)
                     Log.e(TAG,"$res")
                 }else{
@@ -166,6 +166,7 @@ class MyInfoActivity : AppCompatActivity() {
                     val image = getBodyFromUri(uri)
                     Log.e(TAG,"onActivityResult $id")
                     repository.updateImage(id!!,image)
+                    setView()
                 }
             }
             else -> {
